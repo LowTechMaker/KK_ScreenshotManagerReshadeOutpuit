@@ -226,6 +226,7 @@ namespace Screencap
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public static ConfigEntry<KeyboardShortcut> KeyCaptureUI { get; private set; }
         public static ConfigEntry<KeyboardShortcut> KeyCaptureRender { get; private set; }
+        public static ConfigEntry<KeyboardShortcut> KeyCaptureAlpha => KeyCaptureRender;
         public static ConfigEntry<KeyboardShortcut> KeyGui { get; private set; }
         public static ConfigEntry<int> ResolutionX { get; private set; }
         public static ConfigEntry<int> ResolutionY { get; private set; }
