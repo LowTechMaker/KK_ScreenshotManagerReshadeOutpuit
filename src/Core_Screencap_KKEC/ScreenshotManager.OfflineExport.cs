@@ -973,8 +973,12 @@ namespace Screencap
         private static void WriteOfflineMetadata(string filename, int width, int height, int depthWidth, int depthHeight, Camera cam, string depthSource, int downscaling)
         {
             var invariant = CultureInfo.InvariantCulture;
+            var productName = !string.IsNullOrEmpty(ScreenshotNameOverride.Value)
+                ? ScreenshotNameOverride.Value
+                : Application.productName.Replace(" ", "");
             var sb = new StringBuilder();
             sb.AppendLine("{");
+            sb.AppendLine($"  \"productName\": \"{productName}\",");
             sb.AppendLine($"  \"width\": {width},");
             sb.AppendLine($"  \"height\": {height},");
             sb.AppendLine($"  \"depthWidth\": {depthWidth},");
